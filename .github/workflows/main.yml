@@ -24,7 +24,12 @@ jobs:
       - name: execute py script
         run: python pdf2png.py
 
+      - name: Check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$(if [ -n "$(git status E*/*.png --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
       - name: Update changes in GitHub repository
+        if: steps.git-check.outputs.modified == 'true'
         run:  |
           git config --global user.name 'Deyan Mihaylov' 
           git config --global user.email 'd.p.mihaylov@gmail.com'
