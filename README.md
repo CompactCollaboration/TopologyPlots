@@ -1,43 +1,55 @@
 # TopologyPlots
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E1/E1.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E1/E1.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E1/E1.pdf">E1</a></p>
-    </embed>
-</object>
+## E1
+![E1](./E1/E1.png)
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E2/E2.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E2/E2.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E2/E2.pdf">E2</a></p>
-    </embed>
-</object>
+## E2
+![E2](./E2/E2.png)
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E3/E3.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E3/E3.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E3/E3.pdf">E3</a></p>
-    </embed>
-</object>
+## E3
+![E3](./E3/E3.png)
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E4/E4.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E4/E4.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E4/E4.pdf">E4</a></p>
-    </embed>
-</object>
+## E4
+![E4](./E4/E4.png)
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E5/E5.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E5/E5.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E5/E5.pdf">E5</a></p>
-    </embed>
-</object>
+## E5
+![E5](./E5/E5.png)
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E6/E6.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E6/E6.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E6/E6.pdf">E6</a></p>
-    </embed>
-</object>
+## E6
+![E6](./E6/E6.png)
 
-<object data="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E7/E7.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E7/E7.pdf">
-        <p><a href="https://github.com/CompactCollaboration/TopologyPlots/blob/main/E7/E7.pdf">E7</a></p>
-    </embed>
-</object>
+## E7
+![E7](./E7/E7.png)
+
+## E8
+![E8](./E8/E8.png)
+
+## E9
+![E9](./E9/E9.png)
+
+## E10
+![E10](./E10/E10.png)
+
+## E11
+![E11](./E11/E11.png)
+
+## E12
+![E12](./E12/E12.png)
+
+## E13
+<!-- ![E13](./E13/E13.png) -->
+
+## E14
+<!-- ![E14](./E14/E14.png) -->
+
+## E15
+![E15](./E15/E15.png)
+
+## E16i
+![E16i](./E16i/E16i.png)
+
+## E17
+![E17](./E17/E17.png)
+
+## E18
+![E18](./E18/E18.png)
