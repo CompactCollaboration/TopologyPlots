@@ -1,0 +1,81 @@
+\documentclass[tikz, usenames, dvipsnames]{standalone} 
+\usepackage{tikz-3dplot}
+\usepackage{xcolor}
+\usetikzlibrary{angles, quotes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{xfrac}
+
+\definecolor{color1}{RGB}{202,0,32}
+\definecolor{color2}{RGB}{244,165,130}
+\definecolor{color3}{RGB}{146,197,222}
+\definecolor{color4}{RGB}{5,113,176}
+
+\definecolor{arrowred}{RGB}{255, 0, 0}
+\definecolor{arrowgreen}{RGB}{0, 170, 80}
+\definecolor{arrowblue}{RGB}{0, 0, 255}
+
+\begin{document}
+
+\tdplotsetmaincoords{54}{130}
+
+\begin{tikzpicture}[
+	scale=1,
+	tdplot_main_coords,
+	axis/.style={-latex, black, dashed}, 
+	vector/.style={-latex, thick}, 
+	vector guide/.style={-latex, thick},
+	vector help/.style={very thin, dash pattern={on 5pt off 2pt on 1pt off 2pt}},
+]
+
+\coordinate (O) at (0,0,0);
+
+\def\x{3.5}
+\def\sq{1.73}
+\def\smallvecx{0.8}
+
+\draw [Violet!30, name path=xz] plot [smooth] coordinates {
+	(0, 0, 3.5) (1.4, 0, 3.4) (2.6, 0, 2.7) (3.1, 0, 1.9) (3.5, 0, 0)
+};
+
+\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
+
+\tikzfillbetween[of=xz and xaxis] {Violet!30};
+
+\coordinate (C) at (1.2, 0, 2.4);
+
+\path (O) + (\smallvecx, 0, 0) coordinate (O1);
+\path (O) + (0, \smallvecx, 0) coordinate (O2);
+\path (O) + (0, 0, \smallvecx) coordinate (O3);
+
+\path (C) + (-\smallvecx * 0.5, \sq * \smallvecx * 0.5, 0) coordinate (C1);
+\path (C) + (-\sq * \smallvecx * 0.5, - \smallvecx * 0.5, 0) coordinate (C2);
+\path (C) + (0, 0, \smallvecx) coordinate (C3);
+
+\path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
+\path (C3) + (-\smallvecx * 0.5, \sq * \smallvecx * 0.5, 0) coordinate (C3y);
+
+\draw[axis] (0, 0, 0) -- (4, 0, 0) node [anchor=north east]{$x$};
+\draw[axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west]{$y$};
+\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south]{$z$};
+
+\draw[
+	vector, Violet
+] (O) -- (C) node [
+	anchor=north east, xshift=8pt, yshift=-26pt
+]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
+
+\draw[vector guide, arrowred] (O) -- (O1);
+\draw[vector guide, dashed, arrowgreen] (O) -- (O2);
+\draw[vector guide, densely dotted, arrowblue] (O) -- (O3);
+
+\draw[vector guide, arrowred] (C) -- (C1);
+\draw[vector guide, dashed, arrowgreen] (C) -- (C2);
+\draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
+
+\pic[draw, -, angle radius=7mm, angle eccentricity=1.25, "\(\beta\)"] {angle = O3--O--C};
+
+\pic[draw, -to, angle radius=3mm, angle eccentricity=1.9, "\(\sfrac{2 \pi p\!}{q}\)", pic text options={shift={(16pt, 8pt)}}] {angle = C3x--C3--C3y};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass[tikz, usenames, dvipsnames]{standalone} 
+\usepackage{tikz-3dplot}
+\usepackage{xcolor}
+\usetikzlibrary{angles, quotes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+
+\definecolor{color1}{RGB}{202,0,32}
+\definecolor{color2}{RGB}{244,165,130}
+\definecolor{color3}{RGB}{146,197,222}
+\definecolor{color4}{RGB}{5,113,176}
+
+\definecolor{arrowred}{RGB}{255, 0, 0}
+\definecolor{arrowgreen}{RGB}{0, 170, 80}
+\definecolor{arrowblue}{RGB}{0, 0, 255}
+
+\begin{document}
+
+\tdplotsetmaincoords{54}{130}
+
+\begin{tikzpicture}[
+	scale=1,
+	tdplot_main_coords,
+	axis/.style={-latex, black, dashed}, 
+	vector/.style={-latex, thick}, 
+	vector guide/.style={-latex, thick},
+	vector help/.style={very thin, dash pattern={on 5pt off 2pt on 1pt off 2pt}},
+]
+
+\coordinate (O) at (0,0,0);
+
+\def\x{3.5}
+\def\smallvecx{0.8}
+
+\draw [Bittersweet!30, name path=xy] plot [smooth] coordinates {
+	(0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
+};
+
+\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
+   
+\draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
+	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
+};
+
+\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
+
+\tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
+\tikzfillbetween[of=xz and xaxis] {Violet!30};
+
+\coordinate (A) at (2.7, 0, 0);
+\coordinate (B) at (0.9, 2.6, 0);
+\coordinate (C) at (1.8, 2.5, 4.4);
+\coordinate (D) at (1.8, 2.5, 0);
+
+\path (O) + (\smallvecx, 0, 0) coordinate (O1);
+\path (O) + (0, \smallvecx, 0) coordinate (O2);
+\path (O) + (0, 0, \smallvecx) coordinate (O3);
+
+\path (A) + (\smallvecx, 0, 0) coordinate (A1);
+\path (A) + (0, \smallvecx, 0) coordinate (A2);
+\path (A) + (0, 0, \smallvecx) coordinate (A3);
+
+\path (B) + (\smallvecx, 0, 0) coordinate (B1);
+\path (B) + (0, \smallvecx, 0) coordinate (B2);
+\path (B) + (0, 0, \smallvecx) coordinate (B3);
+
+\path (C) + (\smallvecx, 0, 0) coordinate (C1);
+\path (C) + (0, \smallvecx, 0) coordinate (C2);
+\path (C) + (0, 0, \smallvecx) coordinate (C3);
+
+\draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
+\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
+\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
+
+\draw[
+	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}
+] (O) -- (A) node [
+	anchor=west, xshift=7pt, yshift=1pt
+] {\textcolor{black}{\(\mathbf{T_{A_{1}}}\)}};
+
+\draw[
+	vector, Bittersweet
+] (O) -- (B) node [
+	anchor=south east, xshift=-4pt, yshift=0pt
+] {\textcolor{black}{\(\mathbf{T_{A_{2}}}\)}};
+
+\draw[
+	vector, Brown
+] (O) -- (C) node [
+	anchor=north east, xshift=12pt, yshift=-26pt
+]{\textcolor{black}{\(\mathbf{T_{A_{3}}}\)}};
+
+\draw[vector help] (O) -- (D);
+\draw[vector help] (C) -- (D);
+
+\draw[vector guide, arrowred] (O) -- (O1);
+\draw[vector guide, dashed, arrowgreen] (O) -- (O2);
+\draw[vector guide, densely dotted, arrowblue] (O) -- (O3);
+
+\draw[vector guide, arrowred] (A) -- (A1);
+\draw[vector guide, dashed, arrowgreen] (A) -- (A2);
+\draw[vector guide, densely dotted, arrowblue] (A) -- (A3);
+
+\draw[vector guide, arrowred] (B) -- (B1);
+\draw[vector guide, dashed, arrowgreen] (B) -- (B2);
+\draw[vector guide, densely dotted, arrowblue] (B) -- (B3);
+
+\draw[vector guide, arrowred] (C) -- (C1);
+\draw[vector guide, dashed, arrowgreen] (C) -- (C2);
+\draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
+
+\pic[draw, -, angle radius=4mm, angle eccentricity=1.3, "\(\alpha\)"] {angle = A--O--B};
+\pic[draw, -, angle radius=9mm, angle eccentricity=1.25, "\(\beta\)"] {angle = C--O--O3};
+\pic[draw, -, angle radius=7mm, angle eccentricity=1.25, "\(\gamma\)"] {angle = A--O--D};
+
+\end{tikzpicture}
+\end{document}
