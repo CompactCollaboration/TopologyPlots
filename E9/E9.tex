@@ -55,25 +55,26 @@
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (2.7, 0, 0);
+\coordinate (A) at (1.8, 2.5, 0);
 \coordinate (B) at (0, 2.6, 0);
-\coordinate (C) at (1.8, 2.5, 4.4);
-\coordinate (D) at (1.8, 2.5, 0);
+\coordinate (C) at (2.8, 1.3, 3.2);
+\coordinate (D) at (2.8, 1.3, 0);
+\coordinate (E) at (0, 1.3, 0);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
 \path (O) + (0, 0, \smallvecx) coordinate (O3);
 
 \path (A) + (\smallvecx, 0, 0) coordinate (A1);
-\path (A) + (0, \smallvecx, 0) coordinate (A2);
+\path (A) + (0, -\smallvecx, 0) coordinate (A2);
 \path (A) + (0, 0, \smallvecx) coordinate (A3);
 
 \path (B) + (\smallvecx, 0, 0) coordinate (B1);
 \path (B) + (0, \smallvecx, 0) coordinate (B2);
 \path (B) + (0, 0, \smallvecx) coordinate (B3);
 
-\path (C) + (0, \smallvecx, 0) coordinate (C1);
-\path (C) + (-\smallvecx, 0, 0) coordinate (C2);
+\path (C) + (\smallvecx, 0, 0) coordinate (C1);
+\path (C) + (0, \smallvecx, 0) coordinate (C2);
 \path (C) + (0, 0, \smallvecx) coordinate (C3);
 
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
@@ -84,25 +85,26 @@
 \draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
 
 \draw[
-	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}
+	vector, Bittersweet, solid
 ] (O) -- (A) node [
-	anchor=west, xshift=7pt, yshift=1pt
-] {\textcolor{black}{\(\mathbf{T_{A_{1}}}\)}};
+	anchor=west, xshift=-1pt, yshift=0pt
+] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
-	anchor=south east, xshift=-4pt, yshift=-5pt
-] {\textcolor{black}{\(\mathbf{T_{A_{2}}}\)}};
+	anchor=south east, xshift=-2pt, yshift=-7pt
+] {\textcolor{black}{\(\mathbf{T_{B_{1}}}\)}};
 
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north east, xshift=8pt, yshift=-26pt
-]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=south west, xshift=-1pt, yshift=-4pt
+]{\textcolor{black}{\(\mathbf{T_{B_{2}}}\)}};
 
 \draw[vector help] (O) -- (D);
 \draw[vector help] (C) -- (D);
+\draw[vector help] (D) -- (E);
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);
@@ -119,11 +121,6 @@
 \draw[vector guide, arrowred] (C) -- (C1);
 \draw[vector guide, dashed, arrowgreen] (C) -- (C2);
 \draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
-
-\pic[draw, -, angle radius=9mm, angle eccentricity=1.25, "\(\beta\)"] {angle = C--O--O3};
-\pic[draw, -, angle radius=4mm, angle eccentricity=1.45, "\(\gamma\)"] {angle = A--O--D};
-
-\pic[draw, -to, angle radius=2mm, angle eccentricity=1, "\(\sfrac{\pi}{2}\)", pic text options={shift={(12pt, 2pt)}}] {angle = C3x--C3--C3y};
 
 \end{tikzpicture}
 \end{document}
