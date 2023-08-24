@@ -20,5 +20,4 @@ jobs:
           pip install pdf2image
 
       - name: execute py script
-<<<<<<< HEAD
         run: python pdf2png.py
