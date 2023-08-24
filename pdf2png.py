@@ -5,7 +5,10 @@ for topology in [
 	"E7", "E8","E9", "E10", "E11", "E12",
 	"E13", "E14", "E15", "E16i", "E17", "E18",
 ]:
-	image = convert_from_path(f"./{topology}/{topology}.pdf")
+	try:
+		image = convert_from_path(f"./{topology}/{topology}.pdf")
 
-	for page in image:
-		page.save(f"./{topology}/{topology}.png", "PNG")
+		for page in image:
+			page.save(f"./{topology}/{topology}.png", "PNG")
+	except:
+		pass
