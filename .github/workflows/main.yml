@@ -18,6 +18,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pdf2image
+          pip install poppler
 
       - name: execute py script
         run: python pdf2png.py
