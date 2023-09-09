@@ -202,7 +202,7 @@
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north east, xshift=8pt, yshift=-26pt
+	anchor=north east, xshift=-1pt, yshift=1pt
 ]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
 
 \draw[vector help] (O) -- (D);
@@ -225,10 +225,10 @@
 \draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
 
 \pic[draw, -, angle radius=4mm, angle eccentricity=1.4, "\(\sfrac{2 \pi\!}{3}\)", pic text options={shift={(10pt, 1pt)}}] {angle = A--O--B};
-\pic[draw, -, angle radius=9mm, angle eccentricity=1.25, "\(\beta\)"] {angle = C--O--O3};
+\pic[draw, -, angle radius=3mm, angle eccentricity=1.4, "\(\beta\)", pic text options={shift={(2pt, 4pt)}}] {angle = D--O--C};
 \pic[draw, -, angle radius=7mm, angle eccentricity=1.45, "\(\gamma\)"] {angle = A--O--D};
 
-\pic[draw, -to, angle radius=3mm, angle eccentricity=1.9, "\(\sfrac{\pi\!}{3}\)", pic text options={shift={(14pt, 5pt)}}] {angle = C3x--C3--C3y};
+\pic[draw, -to, angle radius=3mm, angle eccentricity=1.9, "\(\sfrac{\pi\!}{3}\)", pic text options={shift={(14pt, 8pt)}}] {angle = C3x--C3--C3y};
 
 \end{tikzpicture}
 \end{document}
