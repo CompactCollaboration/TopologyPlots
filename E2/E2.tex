@@ -69,7 +69,7 @@
 \path (C) + (0, 0, \smallvecx) coordinate (C3);
 
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
-\path (C3) + (-\smallvecx, 0, 0) coordinate (C3y);
+\path (C3) + (-\smallvecx, 0, -\smallvecx) coordinate (C3y);
 
 \draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
 \draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
@@ -90,8 +90,8 @@
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north east, xshift=12pt, yshift=-26pt
-]{\textcolor{black}{\(\mathbf{T_{A_{3}}}\)}};
+	anchor=north east, xshift=-1pt, yshift=1pt
+]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
 
 \draw[vector help] (O) -- (D);
 \draw[vector help] (C) -- (D);
@@ -113,10 +113,10 @@
 \draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
 
 \pic[draw, -, angle radius=4mm, angle eccentricity=1.3, "\(\alpha\)"] {angle = A--O--B};
-\pic[draw, -, angle radius=9mm, angle eccentricity=1.25, "\(\beta\)"] {angle = C--O--O3};
+\pic[draw, -, angle radius=3mm, angle eccentricity=1.4, "\(\beta\)"] {angle = D--O--C};
 \pic[draw, -, angle radius=7mm, angle eccentricity=1.25, "\(\gamma\)"] {angle = A--O--D};
 
-\pic[draw, -to, angle radius=2mm, angle eccentricity=1, "\(\pi\)", pic text options={shift={(8pt, 5pt)}}] {angle = C3x--C3--C3y};
+\pic[draw, -to, angle radius=3mm, angle eccentricity=1, "\(\pi\)", pic text options={shift={(9pt, 8pt)}}] {angle = C3x--C3--C3y};
 
 \end{tikzpicture}
 \end{document}
