@@ -2,7 +2,7 @@ name: Run pdf2png.py
 
 on:
   workflow_run:
-    workflows: ["Build LaTeX document"]
+    workflows: ["Build LaTeX figures"]
     types:
       - completed
 
