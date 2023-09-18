@@ -23,6 +23,20 @@ jobs:
           root_file: |
             E1/E1.tex
             E2/E2.tex
+            E3/E3.tex
+            E4/E4.tex
+            E5/E5.tex
+            E6/E6.tex
+            E7/E7.tex
+            E8/E8.tex
+            E9/E9.tex
+            E10/E10.tex
+            E11/E11.tex
+            E12/E12.tex
+            E15/E15.tex
+            E16i/E16i.tex
+            E17/E17.tex
+            E18/E18.tex
           
       - name: Check for modified files
         id: git-check
