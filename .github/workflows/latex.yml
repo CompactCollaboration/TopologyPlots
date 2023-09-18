@@ -28,28 +28,22 @@ jobs:
             E17/E17.tex
             E18/E18.tex
 
-      - name: Copy the Readmes
+      - name: Move the PDF figures
         run: |
           topologies="E1 E2 E3 E4 E5 E6 E7 E8 E9 E10 E11 E12 E15 E16i E17 E18"
           for topology in $topologies; do
             mv "${topology}.pdf" "${topology}/${topology}.pdf"
           done
-            
-      # - name: Upload PDF file
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: PDF
-      #     path: E1.pdf
           
-      # - name: Check for modified files
-      #   id: git-check
-      #   run: echo ::set-output name=modified::$(if [ -n "$(git status *.pdf --porcelain)" ]; then echo "true"; else echo "false"; fi)
+      - name: Check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$(if [ -n "$(git status E*/E*.pdf --porcelain)" ]; then echo "true"; else echo "false"; fi)
 
       - name: Update changes in GitHub repository
-        # if: steps.git-check.outputs.modified == 'true'
+        if: steps.git-check.outputs.modified == 'true'
         run:  |
           git config --global user.name 'Deyan Mihaylov' 
           git config --global user.email 'd.p.mihaylov@gmail.com'
-          git add */*.pdf
+          git add E*/E*.pdf
           git commit -m 'Update PDFs'
           git push
