@@ -1,6 +1,10 @@
-name: run pdf2png.py
+name: Run pdf2png.py
 
-on: push
+on:
+  workflow_run:
+    workflows: ["Build LaTeX document"]
+    types:
+      - completed
 
 jobs:
   build:
