@@ -1,4 +1,4 @@
-name: Run pdf2png.py
+name: Convert PDF figures to PNG
 
 on:
   workflow_run:
