@@ -6,9 +6,24 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
+        
       - name: example-class-relations--svg
         uses: dante-ev/latex-action@latest
         with:
-          root_file: E1/E1.tex
+          root_file: E*/E*.tex
           compiler: latex
           args: -interaction=nonstopmode -shell-escape
+          
+      - name: Check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$(if [ -n "$(git status E*/*.pdf --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+      - name: Update changes in GitHub repository
+        if: steps.git-check.outputs.modified == 'true'
+        run:  |
+          git config --global user.name 'Deyan Mihaylov' 
+          git config --global user.email 'd.p.mihaylov@gmail.com'
+          git add E*/*.pdf
+          git commit -m 'Update PDFs'
+          git push
+
