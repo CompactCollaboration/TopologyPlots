@@ -13,6 +13,7 @@ jobs:
           root_file: |
             E1/E1.tex
             E2/E2.tex
+            
           compiler: latex
           args: -interaction=nonstopmode -shell-escape
           
