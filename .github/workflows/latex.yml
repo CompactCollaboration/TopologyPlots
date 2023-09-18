@@ -6,16 +6,6 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-        
-      # - name: example-class-relations--svg
-      #   uses: dante-ev/latex-action@latest
-      #   with:
-      #     root_file: |
-      #       E1/E1.tex
-      #       E2/E2.tex
-            
-      #     compiler: latex
-      #     args: -interaction=nonstopmode -shell-escape
           
       - name: Compile TeX files
         uses: xu-cheng/latex-action@v3
