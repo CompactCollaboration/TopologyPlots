@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: E1/E1.pdf
+          path: E1.pdf
           
       # - name: Check for modified files
       #   id: git-check
