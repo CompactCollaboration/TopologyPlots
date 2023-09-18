@@ -1,6 +1,10 @@
-name: run pdf2png.py
+name: Convert PDF figures to PNG
 
-on: push
+on:
+  workflow_run:
+    workflows: ["Build LaTeX figures"]
+    types:
+      - completed
 
 jobs:
   build:

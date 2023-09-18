@@ -62,7 +62,7 @@
 \draw[
 	vector, Violet
 ] (O) -- (C) node [
-	anchor=north east, xshift=8pt, yshift=-26pt
+	anchor=north east, xshift=8pt, yshift=-6pt
 ]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
 
 \draw[vector guide, arrowred] (O) -- (O1);
@@ -73,7 +73,7 @@
 \draw[vector guide, dashed, arrowgreen] (C) -- (C2);
 \draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
 
-\pic[draw, -, angle radius=7mm, angle eccentricity=1.25, "\(\beta\)"] {angle = O3--O--C};
+\pic[draw, -, angle radius=7mm, angle eccentricity=1.25, "\(\beta\)"] {angle = C--O--O1};
 
 \pic[draw, -to, angle radius=3mm, angle eccentricity=1.9, "\(\sfrac{2 \pi p\!}{q}\)", pic text options={shift={(16pt, 8pt)}}] {angle = C3x--C3--C3y};
 
