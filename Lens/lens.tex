@@ -1,0 +1,155 @@
+\documentclass[tikz]{standalone}
+
+% A representation of the lens space L(p, q) fundamental domain inspired by figure in
+% Hatcher, Algebraic topology, p 145
+% https://pi.math.cornell.edu/~hatcher/AT/AT.pdf
+
+% Despite using the tikz option, the cropping is not perfect.
+% I find that there is a bit more whitespace on the left of the image than on the right.
+% Externally cropping fixes this ...?
+
+% Version 1.0.
+
+\usepackage{tikz-3dplot}
+% Non-standard package: download from
+% https://github.com/matthias-wolff/tikz-3dplot-circleofsphere
+\usepackage{tikz-3dplot-circleofsphere}
+\usepackage{xcolor}
+
+\begin{document}
+
+% Lens space L(p,q)
+% No error checking is performed!
+% p must be no larger than the number of colors defined below.
+% As p gets larger the cap gets flatter and flatter. p > 7 becomes hard to read.
+% It is recommended to stick to 2 <= p <= 7.
+\def\lensp{7}
+\def\lensq{2}
+
+% Cap parameters: radius and viewing angle with respect to the z-axis.
+\pgfmathsetmacro{\lenssphereradius}{10}
+\pgfmathsetmacro{\lensviewtheta}{7} % degrees
+
+% Additional rotation angle around the z-axis.
+% Tweak for aesthetic reasons to align the wedges "nicely".
+\pgfmathsetmacro{\lensphi}{-5} % degrees (additional rotation angle around z-axis, tweak for aesthetics)
+% Half angular size of the cap.
+% This makes the caps quite flat for large p, but correctly produces the requested lens space.
+% This can be set to an arbitrary value for any L(p,q) at the expense of not accurately representing the space.
+\pgfmathsetmacro{\lenscapangle}{180/\lensp} % degrees
+
+
+% A fudge factor to draw the top and bottom of the lens.
+% Due to the rotated view this is not just 1, i.e., we do not want the top and bottom
+% of the lens to start/end at \lenscapangle.
+% Here is an approximation that seems to work. Maybe the equator line is thick enough to hide small imperfections.
+% Obviously this cannot be correct when the angle goes to 90 deg!
+\pgfmathsetmacro{\lensviewfudgefactor}{1 / cos(\lensviewtheta)}
+
+\pgfmathsetmacro{\axislen}{1.5} % length of rotation axis to draw
+% Extra rotation in southern cap for L(p, q): Rotation is by 2 pi q / p
+\pgfmathsetmacro{\southlensphi}{\lensphi - 360*\lensq / \lensp}
+
+% Color cycler for wedges. There must be at least \lensp of these.
+% Here we specify the category 10 colors
+\definecolor{C1}{HTML}{1f77b4}
+\definecolor{C2}{HTML}{ff7f0e}
+\definecolor{C3}{HTML}{2ca02c}
+\definecolor{C4}{HTML}{d62728}
+\definecolor{C5}{HTML}{9467bd}
+\definecolor{C6}{HTML}{8c564b}
+\definecolor{C7}{HTML}{e377c2}
+\definecolor{C8}{HTML}{7f7f7f}
+\definecolor{C9}{HTML}{bcbd22}
+\definecolor{C10}{HTML}{17becf}
+
+% The base coordinate system will have (0, 0, 0) at the center of the "equator" between the two caps
+\pgfmathsetmacro{\zoriginshift}{\lenssphereradius * cos(\lenscapangle)}
+
+% Set our main coordinate system view.
+\tdplotsetmaincoords{90-\lensviewtheta}{0}
+
+% For clipping arcs in front of and behind lens.
+% See https://tex.stackexchange.com/questions/539956/how-can-i-draw-sphere-cut-by-plane-by-using-tikz-3dplot
+\makeatletter
+\tikzset{
+    reuse path/.code={\pgfsyssoftpath@setcurrentpath{#1}}
+}
+\makeatother
+
+\begin{tikzpicture}[tdplot_main_coords, >=stealth, thick, scale=0.75]
+  \coordinate (NorthSphereOrigin) at (0, 0, -\zoriginshift);
+  \coordinate (SouthSphereOrigin) at (0, 0, \zoriginshift);
+ 
+  % Top Half arcs
+  \tdplotsetrotatedcoords{0}{0}{0}
+  \tdplotsetrotatedcoordsorigin{(NorthSphereOrigin)}
+  \foreach \j in {1,...,\lensp} {
+    \pgfmathsetmacro{\arcang}{360*\j/\lensp+\lensphi}
+    % Make paths to allow styling the front and back of arcs using clipping
+    \begin{scope}[shift=(NorthSphereOrigin), overlay]
+      \tdplotCsDrawLonCircle[tdplotCsFront/.style={draw=none, save path=\pathFG},tdplotCsBack/.style={draw=none, save path=\pathBG}]{\lenssphereradius}{-90+\arcang}
+    \end{scope}
+    \tdplotsetrotatedthetaplanecoords{\arcang}
+    % Draw foreground arcs
+    \begin{scope}
+      \clip [reuse path=\pathFG];
+      \tdplotdrawarc[tdplot_rotated_coords, very thick, color=C\j]{(NorthSphereOrigin)}{\lenssphereradius}{0}{\lenscapangle}{}{}
+    \end{scope}
+    % Draw background arcs
+    \begin{scope}
+      \clip [reuse path=\pathBG];
+      \tdplotdrawarc[tdplot_rotated_coords, very thick, color=C\j, dashed]{(NorthSphereOrigin)}{\lenssphereradius}{0}{\lenscapangle}{}{}
+    \end{scope}
+  }
+
+  % Bottom Half arcs
+  \tdplotsetrotatedcoords{0}{0}{0}
+  \tdplotsetrotatedcoordsorigin{(SouthSphereOrigin)}
+  \foreach \j in {1,...,\lensp} {
+    \pgfmathsetmacro{\arcang}{360*\j/\lensp+\southlensphi}
+    % Make paths to allow styling the front and back of arcs using clipping
+    \begin{scope}[shift=(SouthSphereOrigin), overlay]
+      \tdplotCsDrawLonCircle[tdplotCsFront/.style={draw=none, save path=\pathFG},tdplotCsBack/.style={draw=none, save path=\pathBG}]{\lenssphereradius}{-90+\arcang}
+    \end{scope}
+    \tdplotsetrotatedthetaplanecoords{180+\arcang}
+    % Draw foreground arcs
+    \begin{scope}
+      \clip [reuse path=\pathFG];
+      \tdplotdrawarc[tdplot_rotated_coords, very thick, color=C\j]{(SouthSphereOrigin)}{\lenssphereradius}{-180}{-180+\lenscapangle}{}{}
+    \end{scope}
+    % Draw background arcs
+    \begin{scope}
+      \clip [reuse path=\pathBG];
+      \tdplotdrawarc[tdplot_rotated_coords, very thick, color=C\j, dashed]{(SouthSphereOrigin)}{\lenssphereradius}{-180}{-180+\lenscapangle}{}{}
+    \end{scope}
+  }
+
+  % Angle where the cap intersects the "equator"
+  \pgfmathsetmacro{\capendangle}{\lensviewfudgefactor*(90-\lenscapangle)}
+
+  % Top cap
+  \begin{scope}[shift=(NorthSphereOrigin)]
+    \draw[tdplot_screen_coords, black] (\capendangle:\lenssphereradius) arc [start angle=\capendangle, end angle=180-\capendangle, radius=\lenssphereradius];
+    % "Equator"
+    \tdplotCsDrawLatCircle[black, ultra thick]{\lenssphereradius}{90-\lenscapangle}
+
+    % Axis
+    \draw [->] (0, 0, \lenssphereradius) -- ++(0, 0, 0.5*\axislen) coordinate(Rot) -- ++(0, 0, 0.5*\axislen);
+    % Rotation label
+    \begin{scope}[shift=(Rot)]
+      % Thicker version to break the axis, if desired.
+      \draw [white, line width=2pt] (-240:0.7) arc [start angle=-240, end angle=60, radius=0.7];
+      % Actual rotation with label
+      \draw [->] (-240:0.7) arc [start angle=-240, end angle=60, radius=0.7] node [above right] {$2\pi q/p$};
+    \end{scope}
+  \end{scope}
+  
+  % Bottom cap
+  \begin{scope}[shift=(SouthSphereOrigin)]
+    \draw[tdplot_screen_coords, black] (-\capendangle:\lenssphereradius) arc [start angle=-\capendangle, end angle=-180+\capendangle, radius=\lenssphereradius];
+  \end{scope}
+
+ \end{tikzpicture}
+
+\end{document}
