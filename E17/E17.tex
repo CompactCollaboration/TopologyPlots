@@ -44,8 +44,10 @@
 
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 
+% Same as E7 with (A) coordinates copied to (B) and x <-> z.
 \coordinate (A) at (2.1, 1.4, 0);
-\coordinate (B) at (0, 1.4, 2.6);
+%\coordinate (B) at (0, 1.4, 2.6);
+\coordinate (B) at (0, 0.9, 2.1);
 \coordinate (C) at (1.9, 0, 1.1);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
