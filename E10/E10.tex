@@ -56,7 +56,7 @@
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 % Copied from E9.
-\coordinate (A) at (2.1, 0.9, 0);
+\coordinate (A) at (1.7, 1.25, 0);
 \coordinate (B) at (0, 2.6, 0);
 \coordinate (C) at (1.2, 1.3, 1.9);
 \coordinate (D) at (1.2, 1.3, 0);
@@ -98,10 +98,16 @@
 	anchor=south east, xshift=-2pt, yshift=-7pt
 ] {\textcolor{black}{\(\mathbf{T_{C}}\)}};
 
+% \draw[
+% 	vector, Brown
+% ] (O) -- (C) node [
+% 	anchor=north east, xshift=2pt, yshift=4pt
+% ]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
+
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north east, xshift=2pt, yshift=4pt
+	anchor=north west, xshift=-2pt, yshift=-4pt
 ]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
 
 \draw[vector help] (C) -- (D);
