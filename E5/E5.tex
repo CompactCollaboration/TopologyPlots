@@ -63,11 +63,28 @@
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (2.7, 0, 0);
-\coordinate (nA) at (-2.7, 0, 0);
-\coordinate (B) at (-2.5*0.57735, 2.5, 0);
-\coordinate (C) at (1.8, 2.5, 4.4);
-\coordinate (D) at (1.8, 2.5, 0);
+\def\rootthreeoverthree{0.57735}
+
+\def\Ax{2.7}
+
+\def\Bx{-2.5}
+\def\By{2.5}
+
+\def\Cx{1.8}
+\def\Cy{2.5}
+\def\Cz{4.4}
+
+\coordinate (A) at (\Ax, 0, 0);
+\coordinate (nA) at (-\Ax, 0, 0);
+
+\coordinate (B) at (\Bx*\rootthreeoverthree, \By, 0);
+\coordinate (Bx) at (\Bx*\rootthreeoverthree, 0, 0);
+\coordinate (By) at (0, \By, 0);
+
+\coordinate (C) at (\Cx, \Cy, \Cz);
+\coordinate (Cxy) at (\Cx, \Cy, 0);
+\coordinate (Cx) at (\Cx, 0, 0);
+\coordinate (Cy) at (0, \Cy, 0);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -110,8 +127,12 @@
 	anchor=north east, xshift=-1pt, yshift=1pt
 ]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
 
-\draw[vector help one] (O) -- (D);
-\draw[vector help one] (C) -- (D);
+\draw[vector help two] (B) -- (Bx);
+\draw[vector help two] (B) -- (By);
+
+\draw[vector help one] (C) -- (Cxy);
+\draw[vector help two] (Cx) -- (Cxy);
+\draw[vector help two] (Cy) -- (Cxy);
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);
