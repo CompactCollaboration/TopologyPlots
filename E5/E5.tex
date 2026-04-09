@@ -64,6 +64,7 @@
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \coordinate (A) at (2.7, 0, 0);
+\coordinate (nA) at (-2.7, 0, 0);
 \coordinate (B) at (-2.5*0.57735, 2.5, 0);
 \coordinate (C) at (1.8, 2.5, 4.4);
 \coordinate (D) at (1.8, 2.5, 0);
@@ -128,9 +129,7 @@
 \draw[vector guide, dashed, arrowgreen] (C) -- (C2);
 \draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
 
-\pic[draw, -, angle radius=4mm, angle eccentricity=1.4, "\(\sfrac{2 \pi\!}{3}\)", pic text options={shift={(10pt, 1pt)}}] {angle = A--O--B};
-\pic[draw, -, angle radius=3mm, angle eccentricity=1.4, "\(\beta\)", pic text options={shift={(2pt, 4pt)}}] {angle = D--O--C};
-\pic[draw, -, angle radius=7mm, angle eccentricity=1.45, "\(\gamma\)"] {angle = A--O--D};
+\pic[draw, -, angle radius=5mm, angle eccentricity=1.2, "\(\sfrac{\pi\!}{3}\)", pic text options={shift={(5pt, 1pt)}}] {angle = B--O--nA};
 
 \pic[draw, -to, angle radius=3mm, angle eccentricity=1.9, "\(\sfrac{\pi\!}{3}\)", pic text options={shift={(14pt, 8pt)}}] {angle = C3x--C3--C3y};
 
