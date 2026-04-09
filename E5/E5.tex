@@ -1,106 +1,3 @@
-%\documentclass[tikz, usenames, dvipsnames]{standalone} 
-%\usepackage{tikz-3dplot}
-%\usepackage{tkz-euclide}
-%\usepackage{xcolor}
-%\usetikzlibrary{angles, quotes}
-%\usepackage{pgfplots}
-%\usepgfplotslibrary{fillbetween}
-%
-%\usepackage{xfrac}
-%
-%\begin{document}
-%
-%\tdplotsetmaincoords{60}{105}
-%
-%\begin{tikzpicture}[
-%	scale=1,
-%	tdplot_main_coords,
-%	axis/.style={-latex, black, dashed}, 
-%	vector/.style={-latex, thick}, 
-%	vector guide/.style={-latex, thick},
-%	vector help/.style={thin, densely dashed},
-%]
-%
-%\coordinate (O) at (0,0,0);
-%
-%\def\x{3.5}
-%\def\sq{1.73}
-%\def\smallvecx{0.8}
-%
-%\draw [Red!30, name path=xy] plot [smooth] coordinates {
-%	(0, 3.5, 0) (1.4, 3.4, 0) (2.8, 2.9, 0) (3.3, 2.1, 0) (3.5, 0, 0)
-%};
-%
-%\draw [ForestGreen!30, name path=yz] plot [smooth] coordinates { (-3.5, 0, 0) (- 3.2, 1.4, 0) (-2.8, 2.7, 0) (-1.9, 3.7, 0) (-1.1, 3.4, 0) (-0.4, 3.5, 0) (0, 3.5, 0) };
-%\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
-%   
-%\draw [NavyBlue!30, name path=xz] plot [smooth, tension=1] coordinates { (3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) };
-%\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
-%
-%\tikzfillbetween[of=xy and xaxis] {Red!30};
-%\tikzfillbetween[of=yz and yaxis] {ForestGreen!30};
-%\tikzfillbetween[of=xz and xaxis] {NavyBlue!30};
-%
-%\coordinate (A) at (2.7, 0, 0);
-%\coordinate (B) at (0, 2.5, 1.4);
-%\coordinate (C) at (2.6, 2.9, 4.4);
-%\coordinate (D) at (2.6, 2.9, 0);
-%
-%\path (O) + (\smallvecx, 0, 0) coordinate (O1);
-%\path (O) + (0, \smallvecx, 0) coordinate (O2);
-%\path (O) + (0, 0, \smallvecx) coordinate (O3);
-%
-%\path (A) + (\smallvecx, 0, 0) coordinate (A1);
-%\path (A) + (0, \smallvecx, 0) coordinate (A2);
-%\path (A) + (0, 0, \smallvecx) coordinate (A3);
-%
-%\path (B) + (0, \smallvecx, 0) coordinate (B1);
-%\path (B) + (0, 0, \smallvecx) coordinate (B2);
-%\path (B) + (\smallvecx, 0, 0) coordinate (B3);
-%
-%\path (C) + (\smallvecx * 0.5, \sq * \smallvecx * 0.5, 0) coordinate (C1);
-%\path (C) + (-\sq * \smallvecx * 0.5, \smallvecx * 0.5, 0) coordinate (C2);
-%\path (C) + (0, 0, \smallvecx) coordinate (C3);
-%
-%\path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
-%\path (C3) + (\smallvecx * 0.5, \sq * \smallvecx * 0.5, 0) coordinate (C3y);
-%
-%\draw[axis] (-4, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
-%\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
-%\draw[axis] (0, 0, 0) -- (0, 0, 4) node[anchor=south]{$z$};
-%
-%\draw[vector, Red] (O) -- (A) node[anchor=north west]{\textcolor{black}{\(\mathbf{T_{A_{1}}}\)}};
-%\draw[vector, ForestGreen] (O) -- (B) node[anchor=south west]{\textcolor{black}{\(\mathbf{T_{A_{2}}}\)}};
-%\draw[vector, NavyBlue] (O) -- (C) node[anchor=north west]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
-%
-%\draw[vector help] (O) -- (D);
-%\draw[vector help] (C) -- (D);
-%
-%\draw[vector guide, Cerulean] (O) -- (O1);
-%\draw[vector guide, RedViolet] (O) -- (O2);
-%\draw[vector guide, Bittersweet] (O) -- (O3);
-%
-%\draw[vector guide, Cerulean] (A) -- (A1);
-%\draw[vector guide, RedViolet] (A) -- (A2);
-%\draw[vector guide, Bittersweet] (A) -- (A3);
-%
-%\draw[vector guide, Cerulean] (B) -- (B1);
-%\draw[vector guide, RedViolet] (B) -- (B2);
-%\draw[vector guide, Bittersweet] (B) -- (B3);
-%
-%\draw[vector guide, Cerulean] (C) -- (C1);
-%\draw[vector guide, RedViolet] (C) -- (C2);
-%\draw[vector guide, Bittersweet] (C) -- (C3);
-%
-%\pic[draw, -, angle radius=4mm, angle eccentricity=1.4, "\(\sfrac{2 \pi}{3}\)"] {angle = A--O--B};
-%\pic[draw, -, angle radius=9mm, angle eccentricity=1.25, "\(\beta\)"] {angle = C--O--O3};
-%\pic[draw, -, angle radius=7mm, angle eccentricity=1.25, "\(\gamma\)"] {angle = A--O--D};
-%
-%\pic[draw, ->, angle radius=3mm, angle eccentricity=1.9, "\(\sfrac{\pi}{3}\)"] {angle = C3x--C3--C3y};
-%
-%\end{tikzpicture}
-%\end{document}
-
 \documentclass[tikz, usenames, dvipsnames]{standalone} 
 \usepackage{tikz-3dplot}
 \usepackage{xcolor}
@@ -128,7 +25,14 @@
 	axis/.style={-latex, black, dashed}, 
 	vector/.style={-latex, thick}, 
 	vector guide/.style={-latex, thick},
-	vector help/.style={very thin, dash pattern={on 5pt off 2pt on 1pt off 2pt}},
+	vector help one/.style={
+		very thin,
+		dash pattern={on 2pt off 1.5pt on 0.5pt off 1.5pt},
+	},
+	vector help two/.style={
+		very thin,
+		dash pattern={on 2pt off 2pt},
+	},
 ]
 
 \coordinate (O) at (0,0,0);
