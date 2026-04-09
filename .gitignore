@@ -3,3 +3,5 @@ E*/*.synctex.gz
 E*/*.aux
 */.DS_Store
 .DS_Store
+*.fdb_latexmk
+*.fls
