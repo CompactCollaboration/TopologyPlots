@@ -25,7 +25,14 @@
 	axis/.style={-latex, black, dashed}, 
 	vector/.style={-latex, thick}, 
 	vector guide/.style={-latex, thick},
-	vector help/.style={very thin, dash pattern={on 5pt off 2pt on 1pt off 2pt}},
+	vector help one/.style={
+		very thin,
+		dash pattern={on 2pt off 1.5pt on 0.5pt off 1.5pt},
+	},
+	vector help two/.style={
+		very thin,
+		dash pattern={on 2pt off 2pt},
+	},
 ]
 
 \coordinate (O) at (0,0,0);
@@ -55,10 +62,26 @@
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (2.7, 0, 0);
-\coordinate (B) at (0, 2.6, 0);
-\coordinate (C) at (1.8, 2.5, 4.4);
-\coordinate (D) at (1.8, 2.5, 0);
+\def\Ax{2.7}
+
+\def\Bx{0}
+\def\By{2.6}
+
+\def\Cx{1.8}
+\def\Cy{2.5}
+\def\Cz{4.4}
+
+\coordinate (A) at (\Ax, 0, 0);
+
+\coordinate (B) at (\Bx, \By, 0);
+\coordinate (Bx) at (\Bx, 0, 0);
+\coordinate (By) at (0, \By, 0);
+
+\coordinate (C) at (\Cx, \Cy, \Cz);
+\coordinate (Cxy) at (\Cx, \Cy, 0);
+\coordinate (Cx) at (\Cx, 0, 0);
+\coordinate (Cy) at (0, \Cy, 0);
+\coordinate (Cz) at (0, 0, \Cz);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -101,8 +124,8 @@
 	anchor=north east, xshift=-1pt, yshift=1pt
 ]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
 
-\draw[vector help] (O) -- (D);
-\draw[vector help] (C) -- (D);
+\draw[vector help one] (O) -- (Cxy);
+\draw[vector help one] (C) -- (Cxy);
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);
