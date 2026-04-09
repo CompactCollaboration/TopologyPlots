@@ -25,7 +25,14 @@
 	axis/.style={-latex, black, dashed}, 
 	vector/.style={-latex, thick}, 
 	vector guide/.style={-latex, thick},
-	vector help/.style={very thin, dash pattern={on 2pt off 2pt on 2pt off 2pt}},
+	vector help one/.style={
+		very thin,
+		dash pattern={on 2pt off 1.5pt on 0.5pt off 1.5pt},
+	},
+	vector help two/.style={
+		very thin,
+		dash pattern={on 2pt off 2pt},
+	},
 ]
 
 \coordinate (O) at (0,0,0);
@@ -106,14 +113,14 @@
 	anchor=north, xshift=4pt, yshift=0pt
 ]{\textcolor{black}{\(\mathbf{T_{C}}\)}};
 
-\draw[vector help] (A) -- (Ax);
-\draw[vector help] (A) -- (Ay);
+\draw[vector help one] (A) -- (Ax);
+\draw[vector help one] (A) -- (Ay);
 
-\draw[vector help] (B) -- (By);
-\draw[vector help] (B) -- (Bz);
+\draw[vector help one] (B) -- (By);
+\draw[vector help one] (B) -- (Bz);
 
-\draw[vector help] (C) -- (Cx);
-\draw[vector help] (C) -- (Cz);
+\draw[vector help one] (C) -- (Cx);
+\draw[vector help one] (C) -- (Cz);
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);
