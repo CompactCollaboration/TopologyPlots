@@ -1,7 +1,8 @@
-E*/*.log
-E*/*.synctex.gz
-E*/*.aux
+*/*.log
+*/*.synctex.gz
+*/*.aux
 */.DS_Store
+*/*.pdf
 .DS_Store
 *.fdb_latexmk
 *.fls
