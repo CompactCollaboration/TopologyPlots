@@ -24,7 +24,15 @@
 	axis/.style={-latex, black, dashed}, 
 	vector/.style={-latex, thick}, 
 	vector guide/.style={-latex, thick},
-	vector help/.style={very thin, dash pattern={on 5pt off 2pt on 1pt off 2pt}},
+	vector help one/.style={
+		very thin,
+		dash pattern={on 2pt off 1.5pt on 0.5pt off 1.5pt},
+	},
+	vector help two/.style={
+		very thin,
+		dash pattern={on 2pt off 2pt},
+	},
+	vector coord/.style={-latex},
 ]
 
 \coordinate (O) at (0,0,0);
@@ -91,8 +99,6 @@
 \draw[vector guide, arrowred] (B) -- (B1);
 \draw[vector guide, dashed, arrowgreen] (B) -- (B2);
 \draw[vector guide, densely dotted, arrowblue] (B) -- (B3);
-
-\pic[draw, -, angle radius=4mm, angle eccentricity=1.3, "\(\alpha\)"] {angle = A--O--B};
 
 \end{tikzpicture}
 \end{document}
