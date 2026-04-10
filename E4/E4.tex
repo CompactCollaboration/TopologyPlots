@@ -67,8 +67,8 @@
 
 \def\Ax{2.7}
 
-\def\Bx{-2.5}
-\def\By{2.5}
+\def\Bx{-0.5*\Ax}
+\def\By{0.866*\Ax}
 
 \def\Cx{1.8}
 \def\Cy{2.5}
@@ -77,8 +77,8 @@
 \coordinate (A) at (\Ax, 0, 0);
 \coordinate (nA) at (-\Ax, 0, 0);
 
-\coordinate (B) at (\Bx*\rootthreeoverthree, \By, 0);
-\coordinate (Bx) at (\Bx*\rootthreeoverthree, 0, 0);
+\coordinate (B) at (\Bx, \By, 0);
+\coordinate (Bx) at (\Bx, 0, 0);
 \coordinate (By) at (0, \By, 0);
 
 \coordinate (C) at (\Cx, \Cy, \Cz);
