@@ -55,10 +55,13 @@
 \tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (2.7, 0, 0);
-\coordinate (B) at (0.9, 2.6, 0);
-\coordinate (C) at (1.8, 2.5, 4.4);
-\coordinate (D) at (1.8, 2.5, 0);
+\def\Ax{2.7}
+
+\def\Bx{0.9}
+\def\By{2.6}
+
+\coordinate (A) at (\Ax, 0, 0);
+\coordinate (B) at (\Bx, \By, 0);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);

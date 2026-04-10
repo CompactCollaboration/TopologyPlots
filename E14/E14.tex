@@ -47,17 +47,17 @@
 
 \draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
    
-% \draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
-% 	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
-% };
+\draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
+	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
+};
 
 \draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
 
 \tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
-% \tikzfillbetween[of=xz and xaxis] {Violet!30};
+\tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (1.7, 1.25, 0);
+\coordinate (A) at (2.3, 0, 0);
 \coordinate (B) at (0, 2.6, 0);
 \coordinate (C) at (1.2, 0, 1.9);
 
@@ -95,12 +95,6 @@
 ] (O) -- (B) node [
 	anchor=south east, xshift=-3pt, yshift=-7pt
 ] {\textcolor{black}{\(\mathbf{T_{B}}\)}};
-
-% \draw[
-% 	vector, Violet
-% ] (O) -- (C) node [
-% 	anchor=north east, xshift=14pt, yshift=-6pt
-% ]{\textcolor{black}{\(\mathbf{T_{B_{2}}}\)}};
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);

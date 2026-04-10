@@ -28,7 +28,7 @@
 	vector help/.style={very thin, dash pattern={on 5pt off 2pt on 1pt off 2pt}},
 ]
 
-\coordinate (O) at (0,0,0);
+\coordinate (O) at (0, 0, 0);
 
 \def\x{3.5}
 \def\sq{1.73}
@@ -40,9 +40,16 @@
 
 \draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
 
-\tikzfillbetween[of=xz and xaxis] {Violet!30};
+\draw [ProcessBlue!30, name path=yz] plot [smooth] coordinates { 
+	(0, 3.5, 0) (0, 3.2, 1.4) (0, 2.8, 2.7) (0, 1.9, 3.7) (0, 1.1, 3.4) (0, 0.4, 3.5) (0, 0, 3.5) 
+};
 
-\coordinate (C) at (1.2, 0, 2.4);
+\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
+
+\tikzfillbetween[of=xz and xaxis] {Violet!30};
+\tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
+
+\coordinate (C) at (0, 0, 2.4);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -63,7 +70,7 @@
 	vector, Violet
 ] (O) -- (C) node [
 	anchor=north east, xshift=8pt, yshift=-6pt
-]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
+]{\textcolor{black}{\(\mathbf{T}\)}};
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);
