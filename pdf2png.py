@@ -6,7 +6,10 @@ for topology in [
 	"E13", "E14", "E15", "E16i", "E17", "E18",
 ]:
 	try:
-		image = convert_from_path(f"./{topology}/{topology}.pdf")
+		image = convert_from_path(
+			f"./{topology}/{topology}.pdf",
+			dpi=600,
+		)
 
 		for page in image:
 			page.save(f"./{topology}/{topology}.png", "PNG")
