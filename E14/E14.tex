@@ -75,14 +75,16 @@
 \draw[
 	vector, Bittersweet, solid
 ] (O) -- (A) node [
-	anchor=west, xshift=0pt, yshift=0pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=north west,
+	xshift=-3pt, yshift=1pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
-	anchor=south east, xshift=-3pt, yshift=-7pt
-] {\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=west,
+	xshift=-1pt, yshift=3pt,
+] {\textcolor{black}{\(\T{B}{}\)}};
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);
@@ -95,10 +97,6 @@
 \draw[vector guide, arrowred] (B) -- (B1);
 \draw[vector guide, dashed, arrowgreen] (B) -- (B2);
 \draw[vector guide, densely dotted, arrowblue] (B) -- (B3);
-
-% \draw[vector guide, arrowred] (C) -- (C1);
-% \draw[vector guide, dashed, arrowgreen] (C) -- (C2);
-% \draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
 
 \end{tikzpicture}
 \end{document}

@@ -73,20 +73,23 @@
 \draw[
 	vector, Bittersweet, solid
 ] (O) -- (A) node [
-	anchor=west, xshift=0pt, yshift=0pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=north west,
+	xshift=-3pt, yshift=1pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
-	anchor=south east, xshift=-3pt, yshift=-7pt
-] {\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=south west,
+	xshift=-1pt, yshift=-6pt,
+] {\textcolor{black}{\(\T{B}{}\)}};
 
 \draw[
 	vector, Violet
 ] (O) -- (C) node [
-	anchor=north east, xshift=8pt, yshift=0pt
-]{\textcolor{black}{\(\mathbf{T_{C}}\)}};
+	anchor=north east,
+	xshift=8pt, yshift=1pt,
+]{\textcolor{black}{\(\T{C}{}\)}};
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);

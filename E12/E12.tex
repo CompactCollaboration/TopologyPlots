@@ -83,14 +83,16 @@
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}
 ] (O) -- (A) node [
-	anchor=west, xshift=7pt, yshift=1pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=west,
+	xshift=7pt, yshift=0pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north east, xshift=-1pt, yshift=1pt
-]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=north west,
+	xshift=-1pt, yshift=3pt,
+]{\textcolor{black}{\(\T{B}{}\)}};
 
 \draw[vector help one] (C) -- (Cxy);
 \draw[vector help two] (Cx) -- (Cxy);

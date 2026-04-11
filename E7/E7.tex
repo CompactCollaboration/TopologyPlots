@@ -43,7 +43,7 @@
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \coordinate (A) at (2.3, 0, 0);
-\coordinate (B) at (0, 2.6, 0);
+\coordinate (B) at (0, 2.4, 0);
 \coordinate (C) at (1.2, 0, 1.9);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
@@ -72,20 +72,23 @@
 \draw[
 	vector, Bittersweet, solid
 ] (O) -- (A) node [
-	anchor=west, xshift=0pt, yshift=0pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=north west,
+	xshift=-3pt, yshift=1pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
-	anchor=south east, xshift=-3pt, yshift=-7pt
-] {\textcolor{black}{\(\mathbf{T_{B_{1}}}\)}};
+	anchor=west,
+	xshift=-1pt, yshift=2pt,
+] {\textcolor{black}{\(\T{B_{1}}{}\)}};
 
 \draw[
 	vector, Violet
 ] (O) -- (C) node [
-	anchor=north east, xshift=14pt, yshift=-6pt
-]{\textcolor{black}{\(\mathbf{T_{B_{2}}}\)}};
+	anchor=south west,
+	xshift=-1pt, yshift=-6pt,
+]{\textcolor{black}{\(\T{B_{2}}{}\)}};
 
 \draw[vector guide, arrowred] (O) -- (O1);
 \draw[vector guide, dashed, arrowgreen] (O) -- (O2);

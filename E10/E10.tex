@@ -51,18 +51,22 @@
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\def\Ax{1.7}
+\def\Ax{2.1}
 \def\Ay{0}
 \def\Az{0}
+
 \def\Bx{0}
 \def\By{1.2}
-\def\Bz{1.5}
+\def\Bz{2.3}
+
 \def\Cx{0}
 \def\Cy{2*\By}
 \def\Cz{0}
 
 \coordinate (A) at (\Ax, \Ay, \Az);
+
 \coordinate (B) at (\Bx, \By, \Bz);
+
 \coordinate (C) at (\Cx, \Cy, \Cz);
 \coordinate (Cxy) at (\Cx, \Cy, 0);
 \coordinate (Cx) at (\Cx, 0, 0);
@@ -94,20 +98,23 @@
 \draw[
 	vector, Bittersweet, solid
 ] (O) -- (A) node [
-	anchor=west, xshift=-1pt, yshift=0pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=north west,
+	xshift=-3pt, yshift=1pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
-	anchor=south east, xshift=-2pt, yshift=-7pt
-] {\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=south west,
+	xshift=-1pt, yshift=-5pt,
+] {\textcolor{black}{\(\T{B}{}\)}};
 
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north west, xshift=-2pt, yshift=-4pt
-]{\textcolor{black}{\(\mathbf{T_{C}}\)}};
+	anchor=north east,
+	xshift=8pt, yshift=1pt,
+]{\textcolor{black}{\(\T{C}{}\)}};
 
 \draw[vector help one] (C) -- (Cxy);
 \draw[vector help two] (Cx) -- (Cxy);

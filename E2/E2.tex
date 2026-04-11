@@ -90,20 +90,23 @@
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}
 ] (O) -- (A) node [
-	anchor=west, xshift=7pt, yshift=1pt
-] {\textcolor{black}{\(\mathbf{T_{A_{1}}}\)}};
+	anchor=west,
+	xshift=7pt, yshift=0pt,
+] {\textcolor{black}{\(\T{A_{1}}{}\)}};
 
 \draw[
 	vector, Bittersweet
 ] (O) -- (B) node [
-	anchor=south east, xshift=-4pt, yshift=0pt
-] {\textcolor{black}{\(\mathbf{T_{A_{2}}}\)}};
+	anchor=west,
+	xshift=4pt, yshift=-0.5pt,
+] {\textcolor{black}{\(\T{A_{2}}{}\)}};
 
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=north east, xshift=-1pt, yshift=1pt
-]{\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=north west,
+	xshift=-1pt, yshift=1pt,
+]{\textcolor{black}{\(\T{B}{}\)}};
 
 \draw[vector help two] (B) -- (Bx);
 \draw[vector help two] (B) -- (By);

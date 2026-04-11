@@ -57,9 +57,9 @@
 \def\Ay{0}
 \def\Az{0}
 \def\Bx{0}
-\def\By{2.7}
+\def\By{2.5}
 \def\Bz{0}
-\def\Cx{1.2}
+\def\Cx{1.1}
 \def\Cy{0.5*\By}
 \def\Cz{3.6}
 
@@ -96,20 +96,23 @@
 \draw[
 	vector, Bittersweet, solid
 ] (O) -- (A) node [
-	anchor=west, xshift=-1pt, yshift=0pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=north west,
+	xshift=-3pt, yshift=1pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
-	anchor=south east, xshift=-2pt, yshift=-7pt
-] {\textcolor{black}{\(\mathbf{T_{B_{1}}}\)}};
+	anchor=west,
+	xshift=-1pt, yshift=2pt,
+] {\textcolor{black}{\(\T{B_{1}}{}\)}};
 
 \draw[
 	vector, Brown
 ] (O) -- (C) node [
-	anchor=south west, xshift=-1pt, yshift=-4pt
-]{\textcolor{black}{\(\mathbf{T_{B_{2}}}\)}};
+	anchor=south west,
+	xshift=-1pt, yshift=-5pt,
+]{\textcolor{black}{\(\T{B_{2}}{}\)}};
 
 \draw[vector help one] (C) -- (Cxy);
 \draw[vector help two] (Cx) -- (Cxy);

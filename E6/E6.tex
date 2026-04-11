@@ -86,20 +86,23 @@
 \draw[
 	vector, Bittersweet
 ] (O) -- (A) node [
-	anchor=west, xshift=1pt, yshift=1pt
-] {\textcolor{black}{\(\mathbf{T_{A}}\)}};
+	anchor=north west,
+	xshift=-1pt, yshift=2pt,
+] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
 	vector, ProcessBlue
 ] (O) -- (B) node [
-	anchor=south east, xshift=-3pt, yshift=-10pt
-] {\textcolor{black}{\(\mathbf{T_{B}}\)}};
+	anchor=south,
+	xshift=-2pt, yshift=0pt,
+] {\textcolor{black}{\(\T{B}{}\)}};
 
 \draw[
 	vector, Violet
 ] (O) -- (C) node [
-	anchor=north, xshift=4pt, yshift=0pt
-]{\textcolor{black}{\(\mathbf{T_{C}}\)}};
+	anchor=west,
+	xshift=4pt, yshift=-1.5pt,
+]{\textcolor{black}{\(\T{C}{}\)}};
 
 \draw[vector help two] (A) -- (Ax);
 \draw[vector help two] (A) -- (Ay);
