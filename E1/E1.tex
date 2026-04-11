@@ -2,7 +2,7 @@
 
 \input{../resources/macros.tex}
 \input{../resources/colors.tex}
-
+\input{../resources/styles.tex}
 
 % \definecolor{vec1}{RGB}{230, 159, 0}
 % \definecolor{vec2}{RGB}{86, 180, 233}
@@ -21,18 +21,6 @@
 \begin{tikzpicture}[
 	scale=1,
 	tdplot_main_coords,
-	axis/.style={-latex, black, dashed}, 
-	vector/.style={-latex, thick}, 
-	vector guide/.style={-latex, thick},
-	vector help one/.style={
-		very thin,
-		dash pattern={on 2pt off 1.5pt on 0.5pt off 1.5pt},
-	},
-	vector help two/.style={
-		very thin,
-		dash pattern={on 2pt off 2pt},
-	},
-	vector coord/.style={-latex},
 ]
 
 \coordinate (O) at (0,0,0);
@@ -61,7 +49,7 @@
 \def\By{2.6}
 
 \def\Cx{1.7}
-\def\Cy{2.2}
+\def\Cy{2.3}
 \def\Cz{4.4}
 
 \coordinate (A) at (\Ax, 0, 0);
@@ -92,9 +80,9 @@
 \path (C) + (0, \smallvecx, 0) coordinate (C2);
 \path (C) + (0, 0, \smallvecx) coordinate (C3);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
+\draw [axis] (0, 0, 0) -- (4, 0, 0) node [anchor=north east] {$x$};
+\draw [axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west] {$y$};
+\draw [axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south] {$z$};
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt},
