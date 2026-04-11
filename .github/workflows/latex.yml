@@ -4,9 +4,6 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
 
-    env:
-      TEXINPUTS: "${{ github.workspace }}/common//:"
-
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
@@ -33,6 +30,7 @@ jobs:
             E16i/E16i.tex
             E17/E17.tex
             E18/E18.tex
+          work_in_root_file_dir: true
 
       - name: Move the PDF figures
         run: |
