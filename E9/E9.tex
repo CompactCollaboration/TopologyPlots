@@ -45,15 +45,19 @@
 \def\Ax{1.7}
 \def\Ay{0}
 \def\Az{0}
+
 \def\Bx{0}
 \def\By{2.5}
 \def\Bz{0}
+
 \def\Cx{1.1}
 \def\Cy{0.5*\By}
 \def\Cz{3.6}
 
 \coordinate (A) at (\Ax, \Ay, \Az);
+
 \coordinate (B) at (\Bx, \By, \Bz);
+
 \coordinate (C) at (\Cx, \Cy, \Cz);
 \coordinate (Cxy) at (\Cx, \Cy, 0);
 \coordinate (Cx) at (0, \Cy, 0);
@@ -78,9 +82,7 @@
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
 \path (C3) + (0, \smallvecx, 0) coordinate (C3y);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Bittersweet, solid

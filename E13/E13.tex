@@ -34,9 +34,21 @@
 \tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (2.3, 0, 0);
-\coordinate (B) at (0, 2.6, 0);
-\coordinate (C) at (1.2, 0, 1.9);
+\def\Ax{2.3}
+\def\Ay{0}
+\def\Az{0}
+
+\def\Bx{0}
+\def\By{2.6}
+\def\Bz{0}
+
+\def\Cx{1.2}
+\def\Cy{0}
+\def\Cz{1.9}
+
+\coordinate (A) at (\Ax, \Ay, \Az);
+\coordinate (B) at (\Bx, \By, \Bz);
+\coordinate (C) at (\Cx, \Cy, \Cz);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -57,9 +69,7 @@
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
 \path (C3) + (0, \smallvecx, 0) coordinate (C3y);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Bittersweet, solid

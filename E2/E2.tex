@@ -34,17 +34,20 @@
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \def\Ax{2.7}
+\def\Ay{0}
+\def\Az{0}
 
 \def\Bx{0.9}
 \def\By{2.6}
+\def\Bz{0}
 
 \def\Cx{1.7}
 \def\Cy{2.3}
 \def\Cz{4.4}
 
-\coordinate (A) at (\Ax, 0, 0);
+\coordinate (A) at (\Ax, \Ay, \Az);
 
-\coordinate (B) at (\Bx, \By, 0);
+\coordinate (B) at (\Bx, \By, \Bz);
 \coordinate (Bx) at (\Bx, 0, 0);
 \coordinate (By) at (0, \By, 0);
 
@@ -73,9 +76,7 @@
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
 \path (C3) + (-\smallvecx, 0, -\smallvecx) coordinate (C3y);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}

@@ -34,7 +34,11 @@
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 
-\coordinate (C) at (0, 0, 2.4);
+\def\Cx{0}
+\def\Cy{0}
+\def\Cz{2.4}
+
+\coordinate (C) at (\Cx, \Cy, \Cz);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -47,9 +51,7 @@
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
 \path (C3) + (-\smallvecx * 0.5, \sq * \smallvecx * 0.5, 0) coordinate (C3y);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node [anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Violet

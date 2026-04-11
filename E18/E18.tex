@@ -15,21 +15,13 @@
 
 \coordinate (O) at (0,0,0);
 
-\def\x{3.5}
-\def\sq{1.73}
 \def\smallvecx{0.8}
-
-\coordinate (A) at (2.1, 1.4, 0);
-\coordinate (B) at (0, 1.4, 2.6);
-\coordinate (C) at (1.9, 0, 1.1);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
 \path (O) + (0, 0, \smallvecx) coordinate (O3);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node [anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south]{$z$};
+\drawaxes
 
 \drawtriad{O}
 

@@ -41,17 +41,29 @@
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
-\coordinate (A) at (2.1, 1.4, 0);
-\coordinate (Ax) at (2.1, 0, 0);
-\coordinate (Ay) at (0, 1.4, 0);
+\def\Ax{2.1}
+\def\Ay{1.4}
+\def\Az{0}
 
-\coordinate (B) at (0, 1.4, 2.35);
-\coordinate (By) at (0, 1.4, 0);
-\coordinate (Bz) at (0, 0, 2.35);
+\def\Bx{0}
+\def\By{1.4}
+\def\Bz{2.35}
 
-\coordinate (C) at (2.1, 0, 2.35);
-\coordinate (Cx) at (2.1, 0, 0);
-\coordinate (Cz) at (0, 0, 2.35);
+\def\Cx{2.1}
+\def\Cy{0}
+\def\Cz{2.35}
+
+\coordinate (A) at (\Ax, \Ay, \Az);
+\coordinate (Ax) at (\Ax, 0, 0);
+\coordinate (Ay) at (0, \Ay, 0);
+
+\coordinate (B) at (\Bx, \By, \Bz);
+\coordinate (By) at (0, \By, 0);
+\coordinate (Bz) at (0, 0, \Bz);
+
+\coordinate (C) at (\Cx, \Cy, \Cz);
+\coordinate (Cx) at (\Cx, 0, 0);
+\coordinate (Cz) at (0, 0, \Cz);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -69,9 +81,7 @@
 \path (C) + (0, -\smallvecx, 0) coordinate (C2);
 \path (C) + (0, 0, \smallvecx) coordinate (C3);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node [anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Bittersweet

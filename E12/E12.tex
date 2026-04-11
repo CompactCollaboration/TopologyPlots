@@ -65,9 +65,7 @@
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
 \path (C3) + (-\smallvecx, 0, -\smallvecx) coordinate (C3y);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node[anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node[anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node[anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}

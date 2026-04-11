@@ -35,10 +35,12 @@
 \tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
 
 % Same as E7 with (A) coordinates copied to (B) and x <-> z.
-\coordinate (A) at (1.7, 1.4, 0);
-%\coordinate (B) at (0, 1.4, 2.6);
-\coordinate (B) at (0, 0, 2.3);
-\coordinate (C) at (1.9, 0, 1.1);
+
+\def\Bx{0}
+\def\By{0}
+\def\Bz{2.3}
+
+\coordinate (B) at (\Bx, \By, \Bz);
 
 \path (O) + (\smallvecx, 0, 0) coordinate (O1);
 \path (O) + (0, \smallvecx, 0) coordinate (O2);
@@ -48,9 +50,7 @@
 \path (B) + (0, -\smallvecx, 0) coordinate (B2);
 \path (B) + (0, 0, \smallvecx) coordinate (B3);
 
-\draw[axis] (0, 0, 0) -- (4, 0, 0) node [anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, ProcessBlue

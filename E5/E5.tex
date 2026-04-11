@@ -42,9 +42,12 @@
 \tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \def\Ax{2.7}
+\def\Ay{0}
+\def\Az{0}
 
 \def\Bx{-0.5*\Ax}
 \def\By{0.866*\Ax}
+\def\Bz{0}
 
 \def\Cx{1.8}
 \def\Cy{2.5}
@@ -81,9 +84,7 @@
 \path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
 \path (C3) + (\smallvecx * 0.5, \sq * \smallvecx * 0.5, 0) coordinate (C3y);
 
-\draw[axis] (-4, 0, 0) -- (4, 0, 0) node [anchor=north east]{$x$};
-\draw[axis] (0, 0, 0) -- (0, 4, 0) node [anchor=north west]{$y$};
-\draw[axis] (0, 0, 0.7) -- (0, 0, 4) node [anchor=south]{$z$};
+\drawaxes
 
 \draw[
 	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}
