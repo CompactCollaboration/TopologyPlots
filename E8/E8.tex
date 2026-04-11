@@ -88,21 +88,10 @@
 	xshift=8pt, yshift=1pt,
 ]{\textcolor{black}{\(\T{C}{}\)}};
 
-\draw[vector guide, arrowred] (O) -- (O1);
-\draw[vector guide, dashed, arrowgreen] (O) -- (O2);
-\draw[vector guide, densely dotted, arrowblue] (O) -- (O3);
-
-\draw[vector guide, arrowred] (A) -- (A1);
-\draw[vector guide, dashed, arrowgreen] (A) -- (A2);
-\draw[vector guide, densely dotted, arrowblue] (A) -- (A3);
-
-\draw[vector guide, arrowred] (B) -- (B1);
-\draw[vector guide, dashed, arrowgreen] (B) -- (B2);
-\draw[vector guide, densely dotted, arrowblue] (B) -- (B3);
-
-\draw[vector guide, arrowred] (C) -- (C1);
-\draw[vector guide, dashed, arrowgreen] (C) -- (C2);
-\draw[vector guide, densely dotted, arrowblue] (C) -- (C3);
+\drawtriad{O}
+\drawtriad{A}
+\drawtriad{B}
+\drawtriad{C}
 
 \end{tikzpicture}
 \end{document}
