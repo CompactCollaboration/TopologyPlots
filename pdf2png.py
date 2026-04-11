@@ -8,7 +8,7 @@ for topology in [
 	try:
 		image = convert_from_path(
 			f"./{topology}/{topology}.pdf",
-			dpi=600,
+			dpi=1200,
 		)
 
 		for page in image:
