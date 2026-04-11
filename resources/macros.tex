@@ -17,3 +17,9 @@
     \draw[vector guide, dashed, arrowgreen] (#1) -- (#12);
     \draw[vector guide, densely dotted, arrowblue] (#1) -- (#13);
 }
+
+\newcommand{\drawaxes}{%
+    \draw[axis] (0.7, 0, 0) -- (4,0,0) node[anchor=north east] {$x$};
+    \draw[axis] (0, 0.7, 0) -- (0,4,0) node[anchor=north west] {$y$};
+    \draw[axis] (0, 0, 0.7) -- (0,0,4) node[anchor=south] {$z$};
+}
