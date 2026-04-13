@@ -18,20 +18,42 @@
 \def\x{3.5}
 \def\smallvecx{0.8}
 
-\draw [Bittersweet!30, name path=xy] plot [smooth] coordinates {
-	(0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
+\phantompathxy
+
+\drawxy{
+	(0, 3.5, 0)
+	(0.18, 3.50, 0)
+	(0.46, 3.48, 0)
+	(0.86, 3.38, 0)
+	(1.34, 3.14, 0)
+	(1.82, 2.72, 0)
+	(2.26, 2.12, 0)
+	(2.68, 1.34, 0)
+	(3.08, 0.56, 0)
+	(3.5, 0, 0)
 };
 
-\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
-   
-\draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
-	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
+\drawyz{
+	(0, 3.5, 0)
+	(0, 3.08, 0.36)
+	(0, 1.8, 0.05)
+	(0, 1.54, 1.54)
+	(0, 1.06, 2.12)
+	(0, 0.56, 2.92)
+	(0, 0.16, 3.38)
+	(0, 0, 3.5)
 };
 
-\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
-
-\tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
-\tikzfillbetween[of=xz and xaxis] {Violet!30};
+\drawzx{
+	(3.5, 0, 0)
+	(3.02, 0, 0.3)
+	(2.15, 0, 0)
+	(1.28, 0, 1.2)
+	(0.90, 0, 2.38)
+	(0.50, 0, 3.12)
+	(0.12, 0, 3.44)
+	(0, 0, 3.5)
+};
 
 % Copied from E8
 

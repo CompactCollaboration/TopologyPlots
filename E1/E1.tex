@@ -13,25 +13,37 @@
 	tdplot_main_coords,
 ]
 
-\coordinate (O) at (0,0,0);
+\coordinate (O) at (0, 0, 0);
 
 \def\x{3.5}
 \def\smallvecx{0.8}
 
-\draw [Bittersweet!30, name path=xy] plot [smooth] coordinates {
-	(0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
+\phantompathxy
+
+\drawxy{
+	(0, 3.6, 0)
+	(0.42, 3.60, 0)
+	(1.02, 3.47, 0)
+	(1.78, 3.05, 0)
+	(2.40, 2.42, 0)
+	(2.88, 1.62, 0)
+	(3.22, 0.78, 0)
+	(3.5, 0, 0)
 };
 
-\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
-   
-\draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
-	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
+\drawzx{
+	(3.5, 0, 0)
+	(3.22, 0, 0.54)
+	(2.88, 0, 0.92)
+	(2.50, 0, 1.16)
+	(2.10, 0, 1.34)
+	(1.72, 0, 1.58)
+	(1.36, 0, 1.98)
+	(1.00, 0, 2.52)
+	(0.64, 0, 3.04)
+	(0.28, 0, 3.40)
+	(0, 0, 3.5)
 };
-
-\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
-
-\tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
-\tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \def\Ax{2.7}
 \def\Ay{0}

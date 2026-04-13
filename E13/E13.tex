@@ -20,19 +20,35 @@
 \def\x{3.5}
 \def\smallvecx{0.8}
 
-\draw [Bittersweet!30, name path=xy] plot [smooth] coordinates {
-	(0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
+\phantompathxy
+
+\drawxy{
+	(3.5, 0, 0)
+	(3.06, 0.72, 0)
+	(2.66, 1.06, 0)
+	(2.32, 1.16, 0)
+	(2.00, 1.20, 0)
+	(1.66, 1.32, 0)
+	(1.30, 1.72, 0)
+	(0.92, 2.40, 0)
+	(0.52, 3.08, 0)
+	(0.14, 3.42, 0)
+	(0, 3.5, 0)
 };
 
-\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
-\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
-   
-\draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
-	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
+\drawzx{
+	(0, 0, 3.5)
+	(0.24, 0, 3.50)
+	(0.58, 0, 3.46)
+	(1.00, 0, 3.30)
+	(1.46, 0, 3.02)
+	(1.86, 0, 2.72)
+	(2.24, 0, 2.22)
+	(2.66, 0, 1.46)
+	(3.06, 0, 1.16)
+	(3.34, 0, 0.84)
+	(3.5, 0, 0)
 };
-
-\tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
-\tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \def\Ax{2.3}
 \def\Ay{0}

@@ -18,27 +18,41 @@
 \def\x{3.5}
 \def\smallvecx{0.8}
 
-\draw [Bittersweet!30, name path=xy] plot [smooth] coordinates {
-	(0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
+\phantompathxy
+
+\drawxy{
+	(0, 3.5, 0)
+	(0.44, 3.46, 0)
+	(1.10, 3.30, 0)
+	(1.84, 2.92, 0)
+	(2.44, 2.34, 0)
+	(2.90, 1.62, 0)
+	(3.22, 0.80, 0)
+	(3.5, 0, 0)
 };
 
-\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
-
-\draw [ProcessBlue!30, name path=yz] plot [smooth] coordinates { 
-	(0, 3.5, 0) (0, 3.2, 1.4) (0, 2.8, 2.7) (0, 1.9, 3.7) (0, 1.1, 3.4) (0, 0.4, 3.5) (0, 0, 3.5) 
+\drawzx{
+	(3.5, 0, 0)
+	(3.14, 0, 0.62)
+	(2.70, 0, 1.02)
+	(2.24, 0, 1.24)
+	(1.80, 0, 1.38)
+	(1.38, 0, 1.86)
+	(1.02, 0, 2.52)
+	(0.66, 0, 3.14)
+	(0.28, 0, 3.46)
+	(0, 0, 3.5)
 };
 
-\draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates { (0, 3.5, 0) (0, 0, 0) };
-   
-\draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
-	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
+\drawyz{
+	(0, 3.5, 0)
+	(0, 3.2, 1.4)
+	(0, 2.8, 2.7)
+	(0, 1.9, 3.7)
+	(0, 1.1, 3.4)
+	(0, 0.4, 3.5)
+	(0, 0, 3.5) 
 };
-
-\draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates { (3.5, 0, 0) (0, 0, 0) };
-
-\tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
-\tikzfillbetween[of=yz and yaxis] {ProcessBlue!30};
-\tikzfillbetween[of=xz and xaxis] {Violet!30};
 
 \def\Ax{2.5}
 \def\Ay{0}
@@ -115,7 +129,7 @@
 \drawtriad{B}
 \drawtriad{C}
 
-\pic[draw, -to, angle radius=3mm, angle eccentricity=1, "\(\sfrac{\pi}{2}\)", pic text options={shift={(12pt, 6pt)}}] {angle = C3x--C3--C3y};
+\centerarc{C3}{0.3}{0}{90}{0.3, 0, -0.2}{above right, xshift=-6pt, yshift=-3pt}{$\sfrac{\pi}{2}$}
 
 \end{tikzpicture}
 \end{document}
