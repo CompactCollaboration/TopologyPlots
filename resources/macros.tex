@@ -6,6 +6,7 @@
 
 \usetikzlibrary{angles}
 \usetikzlibrary{quotes}
+\usetikzlibrary{arrows.meta}
 
 \usepgfplotslibrary{fillbetween}
 
@@ -22,4 +23,55 @@
     \draw[axis] (0.7, 0, 0) -- (4,0,0) node[anchor=north east] {$x$};
     \draw[axis] (0, 0.7, 0) -- (0,4,0) node[anchor=north west] {$y$};
     \draw[axis] (0, 0, 0.7) -- (0,0,4) node[anchor=south] {$z$};
+}
+
+\newcommand{\phantompathxy}{%
+    \draw [draw=none, name path=xy] plot [smooth] coordinates {
+        (0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
+    };
+}
+
+\newcommand{\centerarc}[7]{%
+  % #1 = center (e.g. C3)
+  % #2 = radius
+  % #3 = start angle
+  % #4 = end angle
+  % #5 = offset vector (dx,dy,dz)
+  % #6 = node options
+  % #7 = label
+  \draw[-{Stealth[length=3.5pt, width=3pt]}]
+    ($(#1) + (#5)$)
+    arc[start angle=#3, end angle=#4, radius=#2]
+    node[#6] {#7};
+}
+
+\newcommand{\drawplane}[5]{%
+    % #1 = style/color
+    % #2 = curved path name
+    % #3 = curved path coordinates
+    % #4 = axis path name
+    % #5 = axis coordinates
+    \draw[#1, name path=#2] plot [smooth] coordinates {#3};
+    \draw[transparent, name path=#4] plot [smooth, tension=0] coordinates {#5};
+    \tikzfillbetween[of=#2 and #4] {#1};
+}
+
+\newcommand{\drawxy}[1]{%
+    % #1 = curved path coordinates
+    \drawplane{Bittersweet!30}{xy}{#1}{yaxis}{(0, 3.5, 0) (0, 0, 0)}
+}
+
+\newcommand{\drawnxy}[1]{%
+    % #1 = curved path coordinates
+    \drawplane{ProcessBlue!30}{yz}{#1}{zaxis}{(-3.5, 0, 0) (0, 0, 0)}
+}
+
+\newcommand{\drawyz}[1]{%
+    % #1 = curved path coordinates
+    \drawplane{ProcessBlue!30}{yz}{#1}{zaxis}{(0, 3.5, 0) (0, 0, 0)}
+}
+
+\newcommand{\drawzx}[1]{%
+    % #1 = curved path coordinates
+    \drawplane{Violet!30}{zx}{#1}{xaxis}{(3.5, 0, 0) (0, 0, 0)}
 }
