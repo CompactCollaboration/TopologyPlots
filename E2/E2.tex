@@ -45,25 +45,6 @@
 	(0,0,3.5)
 };
 
-% \draw [Bittersweet!30, name path=xy] plot [smooth] coordinates {
-% 	(0, 3.5, 0) (1.4, 3.4, 0) (2.6, 2.7, 0) (3.1, 1.9, 0) (3.5, 0, 0)
-% };
-
-% \draw [transparent, name path=yaxis] plot [smooth, tension=0] coordinates {
-% 	(0, 3.5, 0) (0, 0, 0)
-% };
-   
-% \draw [Violet!30, name path=xz] plot [smooth, tension=1] coordinates { 
-% 	(3.5, 0, 0) (2.8, 0, 2.5) (1.9, 0, 2.4) (0.7, 0, 3.4) (0, 0, 3.5) 
-% };
-
-% \draw [transparent, name path=xaxis] plot [smooth, tension=0] coordinates {
-% 	(3.5, 0, 0) (0, 0, 0)
-% };
-
-% \tikzfillbetween[of=xy and xaxis] {Bittersweet!30};
-% \tikzfillbetween[of=xz and xaxis] {Violet!30};
-
 \def\Ax{2.7}
 \def\Ay{0}
 \def\Az{0}
@@ -110,7 +91,7 @@
 \drawaxes
 
 \draw[
-	vector, Bittersweet, dashed, postaction={draw=Violet, dash phase=3pt}
+	vector, Violet,% dashed, postaction={draw=Violet, dash phase=3pt}
 ] (O) -- (A) node [
 	anchor=west,
 	xshift=7pt, yshift=0pt,

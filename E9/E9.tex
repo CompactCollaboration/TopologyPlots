@@ -49,12 +49,9 @@
 
 \drawzx{
 	(3.3, 0, 0)
-	(3.12, 0, 0.66)
-	(2.76, 0, 1.02)
-	(2.40, 0, 1.18)
-	(2.04, 0, 1.24)
-	(1.70, 0, 1.40)
-	(1.36, 0, 1.82)
+	(2.40, 0, 0.4)
+	(1.65, 0, 0.)
+	(1.36, 0, 0.72)
 	(1.00, 0, 2.44)
 	(0.62, 0, 3.04)
 	(0.22, 0, 3.38)
@@ -106,21 +103,21 @@
 \drawaxes
 
 \draw[
-	vector, Bittersweet, solid
+	vector, Bittersweet, solid,
 ] (O) -- (A) node [
 	anchor=north west,
 	xshift=-3pt, yshift=1pt,
 ] {\textcolor{black}{\(\T{A}{}\)}};
 
 \draw[
-	vector, Bittersweet, dashed, postaction={draw=ProcessBlue, dash phase=3pt}
+	vector, ProcessBlue,% dashed, postaction={draw=ProcessBlue, dash phase=3pt}
 ] (O) -- (B) node [
 	anchor=west,
 	xshift=-1pt, yshift=2pt,
 ] {\textcolor{black}{\(\T{B_{1}}{}\)}};
 
 \draw[
-	vector, Brown
+	vector, Brown,
 ] (O) -- (C) node [
 	anchor=south west,
 	xshift=-1pt, yshift=-5pt,
