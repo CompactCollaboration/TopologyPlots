@@ -1,0 +1,82 @@
+\documentclass[tikz, usenames, dvipsnames]{standalone}
+
+\input{../resources/macros.tex}
+\input{../resources/colors.tex}
+\input{../resources/styles.tex}
+
+\begin{document}
+
+\tdplotsetmaincoords{54}{130}
+
+\begin{tikzpicture}[
+	scale=1,
+	tdplot_main_coords,
+]
+
+\coordinate (O) at (0, 0, 0);
+
+\def\x{3.5}
+\def\sq{1.73}
+\def\smallvecx{0.8}
+
+\phantompathxy
+
+\drawyz{
+	(0, 3.5, 0)
+	(0, 3.00, 0.80)
+	(0, 2.66, 1.08)
+	(0, 2.42, 1.14)
+	(0, 2.18, 1.16)
+	(0, 1.92, 1.24)
+	(0, 1.62, 1.56)
+	(0, 1.24, 2.98)
+	(0, 0.76, 3.5)
+	(0, 0.22, 3.65)
+	(0, 0, 3.7)
+};
+
+\drawzx{
+	(3.5, 0, 0)
+	(3.36, 0, 0.22)
+	(3.12, 0, 0.50)
+	(2.82, 0, 0.90)
+	(2.48, 0, 1.24)
+	(2.12, 0, 1.40)
+	(1.74, 0, 1.50)
+	(1.30, 0, 1.84)
+	(0.82, 0, 2.84)
+	(0.28, 0, 3.58)
+	(0, 0, 3.7)
+};
+
+\def\Cx{0}
+\def\Cy{0}
+\def\Cz{2.4}
+
+\coordinate (C) at (\Cx, \Cy, \Cz);
+
+\path (O) + (\smallvecx, 0, 0) coordinate (O1);
+\path (O) + (0, \smallvecx, 0) coordinate (O2);
+\path (O) + (0, 0, \smallvecx) coordinate (O3);
+
+\path (C) + (\smallvecx, 0, 0) coordinate (C1);
+\path (C) + (0, \smallvecx, 0) coordinate (C2);
+\path (C) + (0, 0, \smallvecx) coordinate (C3);
+
+\path (C3) + (\smallvecx, 0, 0) coordinate (C3x);
+\path (C3) + (0, \smallvecx, 0) coordinate (C3y);
+
+\drawaxes
+
+\draw[
+	vector, Bittersweet, solid,
+] (O) -- (C) node [
+	anchor=north west,
+	xshift=-1pt, yshift=-4pt,
+]{\textcolor{black}{\(\T{}{}\)}};
+
+\drawtriad{O}
+\drawtriad{C}
+
+\end{tikzpicture}
+\end{document}
