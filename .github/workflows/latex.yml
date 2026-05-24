@@ -49,6 +49,6 @@ jobs:
         run:  |
           git config --global user.name 'Deyan Mihaylov' 
           git config --global user.email 'd.p.mihaylov@gmail.com'
-          git add E*/E*.pdf
+          git add E*/E*.pdf -f
           git commit -m 'Update PDFs'
           git push
