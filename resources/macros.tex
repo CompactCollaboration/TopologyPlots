@@ -11,7 +11,11 @@
 \usepgfplotslibrary{fillbetween}
 
 \renewcommand*{\vec}[1]{\bm{#1}}
-\newcommand{\T}[2]{\vec{T}_{\vec{#1}}^{#2}}
+\newcommand{\T}[2]{\vec{T}_{#1}^{#2}}
+
+\newcommand*{\E}[1]{\ensuremath{E_{#1}}}
+\newcommand{\slabh}{\ensuremath{\E{16}^{(\mathrm{h})}}} % Homogeneous E16
+\newcommand{\slabi}{\ensuremath{\E{16}^{(\mathrm{i})}}} % Inhomogeneous E16
 
 \newcommand{\drawtriad}[1]{%
     \draw[vector guide, arrowred] (#1) -- (#11);
