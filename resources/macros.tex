@@ -79,3 +79,10 @@
     % #1 = curved path coordinates
     \drawplane{Violet!30}{zx}{#1}{xaxis}{(3.5, 0, 0) (0, 0, 0)}
 }
+
+\newcommand{\TopLeftLabel}[1]{%
+    \node[
+        anchor=north west,
+        xshift=10pt, yshift=-10pt,
+    ] at (current bounding box.north west) {#1};
+}
